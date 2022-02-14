@@ -1,0 +1,25 @@
+{
+  "name": "prjet3-ohmyfood",
+  "version": "1.0.0",
+  "description": "Intégration d'un site en mobileFirst  sur la composition de menu",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "sass":"sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DA-JS-REACT/Prjet3-OhMyFood.git"
+  },
+  "author": "Fred",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/DA-JS-REACT/Prjet3-OhMyFood/issues"
+  },
+  "homepage": "https://github.com/DA-JS-REACT/Prjet3-OhMyFood#readme"
+}
