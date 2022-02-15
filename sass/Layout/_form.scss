@@ -1,0 +1,15 @@
+.form {
+    background: $grey;
+    margin-bottom: $layout-margin_bottom;
+
+}
+
+.form-input {
+    background: $grey-dark;
+    text-align: center;
+    &__search{
+        background: $grey-dark;
+        appearance: none;
+        border: none;
+    }
+}
