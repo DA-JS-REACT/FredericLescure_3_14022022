@@ -1,0 +1,17 @@
+{
+    "version": 3,
+    "mappings": "AEAA;;;EAGE;AAEF,AAAA,CAAC,CAAC;EACE,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACb;;AACD,AAAA,IAAI,CAAC;EACD,WAAW,EAAE,oBAAoB;CACpC;;AAED,AAAA,CAAC,CAAC;EACE,eAAe,EAAE,IAAI;CACxB;;ACfD,AAAA,EAAE;AACF,EAAE;AACF,EAAE,CAAC;EACC,WAAW,EAAE,oBAAoB;CACpC;;AAED,AAAA,CAAC,CAAC;EACE,WAAW,EAAC,GAAG;CAClB;;ACRD,AAAA,MAAM,CAAC;EACH,UAAU,EAAE,MAAM;EAClB,OAAO,EHKC,IAAI,CAAC,CAAC,CAAC,IAAI;CGJtB;;ACHD,AAAA,KAAK,CAAC;EACF,UAAU,EJEP,OAAO;EIDV,aAAa,EJMK,IAAI;CIJzB;;AAED,AAAA,WAAW,CAAC;EACR,UAAU,EJHF,OAAkB;EII1B,UAAU,EAAE,MAAM;CAMrB;;AALI,AAAD,mBAAS,CAAA;EACL,UAAU,EJNN,OAAkB;EIOtB,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,IAAI;CACf;;ACbL,AAAA,SAAS,CAAC;EACN,MAAM,EAAE,aAAa;EACrB,aAAa,ELMK,IAAI;CKLzB;;ACHD,AAAA,UAAU,CAAC;EACP,MAAM,EAAE,cAAc;EACtB,aAAa,ENMK,IAAI;EMLtB,OAAO,EAAE,IAAI;CAChB;;ACJD,AAAA,MAAM,CAAC;EACH,MAAM,EAAE,eAAe;CAC1B",
+    "sources": [
+        "../sass/main.scss",
+        "../sass/Utils/_variables.scss",
+        "../sass/Base/_base.scss",
+        "../sass/Base/_typography.scss",
+        "../sass/Layout/_header.scss",
+        "../sass/Layout/_form.scss",
+        "../sass/Layout/_tutorial.scss",
+        "../sass/Layout/_container.scss",
+        "../sass/Layout/_footer.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

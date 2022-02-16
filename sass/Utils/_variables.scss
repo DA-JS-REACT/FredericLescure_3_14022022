@@ -2,8 +2,11 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $grey: #F0F0F0;
-$grey-dark: darken($grey, 20%);
+$grey-dark: darken($grey, 10%);
+$color-primary-light: lighten($color-primary, 36%);
 
 
 $padding-TB:10px 0 10px;
 $layout-margin_bottom:30px;
+
+$numbers: "1","2","3";

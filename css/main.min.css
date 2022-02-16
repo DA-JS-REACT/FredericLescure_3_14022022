@@ -1,1 +1,2 @@
-body{background-color:blueviolet}
+*{margin:0;padding:0}body{font-family:'Roboto', sans-serif}a{text-decoration:none}h1,h2,h3{font-family:'Shrikhand', cursive}p{font-weight:100}header{text-align:center;padding:10px 0 10px}.form{background:#F0F0F0;margin-bottom:30px}.form-input{background:#bdbdbd;text-align:center}.form-input__search{background:#bdbdbd;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none}.tutorial{border:1px solid red;margin-bottom:30px}.container{border:1px solid blue;margin-bottom:30px;padding:20px}footer{border:1px solid black}
+/*# sourceMappingURL=main.min.css.map */

@@ -1,4 +1,20 @@
 .tutorial {
-    border: 1px solid red;
     margin-bottom: $layout-margin_bottom;
+    .tutorial-title{
+        padding: 5px;
+        margin-left: 10px;
+    }
+    .tutorial-div{
+        @include tutorial;
+        padding: 5px;
+        & i{
+            margin-right: 10px;
+            text-align: start;
+        }
+        &__text{
+            text-align: start;
+            font-weight: 400;
+            border: 1px solid red;
+        }
+    }
 }
