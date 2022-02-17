@@ -1,7 +1,6 @@
 .container {
-    margin-bottom: $layout-margin_bottom;
     background: $grey;
-    padding-top: 15px;
+    padding: 15px 0 40px;
     &__title {
         @include title;
         margin-top: 30px;
