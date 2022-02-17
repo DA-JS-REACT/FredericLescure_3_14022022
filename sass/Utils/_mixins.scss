@@ -1,13 +1,26 @@
+/*    generic title       */
+
+@mixin title {
+    padding: 10px;
+    margin-left: 15px;
+    font-weight: lighter;
+}
+/******* box shadow ********/
+@mixin shadow($x,$y,$radius) {
+    box-shadow: $x+px $y+px $radius+px rgba(0, 0, 0, 0.219);
+}
+
+
+/******** tutorial  ***********/
 @mixin tutorial {
-    width: 85%;
-    height: 3.5rem;
-    margin: 10px auto 0;
+    width: 80%;
+    height: 3.1rem;
+    margin: 10px auto 30px;
     border-radius: 16px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.219);
+    @include shadow(3,3,5);
     background: $grey;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     position: relative;
     cursor: pointer;
@@ -30,16 +43,15 @@
         padding: 2px 2px 0px;
         font-size: small;
     }
-    @each $number in $numbers {
-    &::before {
-        content:"#{$number}";
-        color: red;
-            }
+    @each $number in $numbers-tutorial {
+        &--#{$number}::before{
+            content:"#{$number}";
+        }
     }
 }
 
 // @for $i from 1 through 3 {
-//     &.tutorial-div--#{$i} ::before {
+//     &--#{$i} ::before {
 //         content:"#{$i}";
 //         position: absolute;
 //         left: -3%;
@@ -53,3 +65,37 @@
 //         font-size: small;
 //     }
 //     }
+
+/****** for tag New on card  ******/
+
+@mixin new {
+    text-align: center;
+    background-color: $color-tertiary;
+    color: darken($color: $color-tertiary, $amount: 50%);
+    border-radius: 5%;
+    position: absolute;
+    width: 70px;
+    padding: 5px;
+    right: 5%;
+    top: 8%;
+    z-index: 10;
+}
+
+
+/********* img  *************/
+@mixin imgCard {
+    @each $position, $name in  $img {
+        &--#{$position}{
+            background: url("../../"+ #{$name});
+            background-size: cover;
+            background-repeat: no-repeat;
+            @if($position == "second" ){
+                background-position: center;
+            }@else {
+                background-position: bottom;
+            }
+        }
+    } 
+}
+
+

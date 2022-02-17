@@ -1,3 +1,5 @@
+/***************** Color   ***************/
+
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
@@ -5,8 +7,21 @@ $grey: #F0F0F0;
 $grey-dark: darken($grey, 10%);
 $color-primary-light: lighten($color-primary, 36%);
 
-
+/********* margin and padding *********/
 $padding-TB:10px 0 10px;
 $layout-margin_bottom:30px;
 
-$numbers: "1","2","3";
+
+
+/****** for boucle each in tutorial  *******/
+$numbers-tutorial: 1,2,3;
+
+
+/*******  img card  ******/
+
+$img:(
+    "first" : 'public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg',
+    "second": 'public/img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg',
+    "third" :'public/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg',
+    "fourth":'public/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg',
+);
