@@ -23,9 +23,13 @@
 
   <body>
     <!-------------- Start header  ---------------------------->
-    <header>
-        <a href="index.html">Home</a>
-        <img src="./public/img/logo/ohmyfood@2x.svg" alt="" class="logo">
+    <header class="header">
+      <div class="header__link">
+        <a href="index.html" class="header__link--page"><i class="fas fa-arrow-left"></i></a>
+      </div>
+      <div class="header__logo">
+        <img src="./public/img/logo/ohmyfood.png" alt="logo OhMyFood" class="logo logo--home">
+      </div>
     </header>
     <!-------------- End header  ------------------------------->
     <!-------------- Start section ---------------------->
@@ -46,18 +50,18 @@
     </main>
     <!-------------- End Main  ---------------------------->
     <!-------------- Start footer  ---------------------------->
-    <footer>
-      <div>
-        <img src="" alt="">
+    <footer class="footer">
+      <div class="footer-div__logo">
+        <img src="./public/img/logo/ohmyfood.png" alt="logo OhMyFood" class="logo logo--footer">
       </div>
-     <div>
-      <ul>
-        <li><i class="fa fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
-        <li><i class="fas fa-hands-helping"></i><a href="#">Devenir partenaire</a></li>
-        <li><a href="#">Mentions légales</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-     </div>
+      <div class="footer-div__list">
+        <ul class="list">
+          <li class="list-item"><i class="fa fa-utensils"></i><a href="#" class="list-item__link">Proposer un restaurant</a></li>
+          <li class="list-item"><i class="fas fa-hands-helping"></i><a href="#" class="list-item__link">Devenir partenaire</a></li>
+          <li class="list-item"><a href="#" class="list-item__link">Mentions légales</a></li>
+          <li class="list-item"><a href="#" class="list-item__link">Contact</a></li>
+        </ul>
+      </div>
     </footer>
     <!-------------- End Footer  ---------------------------->
   </body>

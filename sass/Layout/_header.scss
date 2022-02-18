@@ -1,4 +1,25 @@
-header {
-    text-align: center;
+.header {
     padding:$padding-TB;
+    display: flex;
+    flex-direction: row;
+    &__link {
+        width: 20%;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        &--home {
+            display:none;
+        }
+        &--page {
+            display: block;
+            color:grey;
+        }
+    }
+    &__logo {
+        width: 80%;
+        display:flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+
 }

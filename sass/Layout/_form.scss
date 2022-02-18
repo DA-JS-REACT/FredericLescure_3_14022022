@@ -36,16 +36,6 @@
     }
     .form-button{
         margin-top: 30px;
-        &__btn {
-            border: none;
-            border-radius: 20px;
-            width: 180px;
-            height: 40px;
-            padding: 5px;
-            color: white;
-            background: linear-gradient(to top left,$color-primary,35%,$color-secondary);
-            @include shadow(1,1,5);
-        }
     }
 
 }
