@@ -19,8 +19,12 @@
     height: 40px;
     padding: 5px;
     color: $color-text-btn;
+    cursor: pointer;
     background: linear-gradient(to top left,$color-primary,35%,$color-secondary);
     @include shadow(1,1,5);
+    &--page {
+        width: 150px;
+    }
 }
 
 

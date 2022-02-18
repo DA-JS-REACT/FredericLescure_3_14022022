@@ -3,22 +3,26 @@
     margin-bottom: $layout-margin_bottom;
     text-align: center;
     padding-bottom: 30px;
-    .form-input {
+    .form-field {
         color: grey;
         background: $grey-dark;
-        height: 35px;
-        border: 1px solid red;
+        height: 40px;
+        box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.219);
         display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
+        &__label {
+            width: 20px;
+        }
         &__search{
             color: grey;
             font-weight: bold;
             background: $grey-dark;
             appearance: none;
             border: none;
-            margin-left: 15px;
-            padding-left: 10px;
+            padding-left:10px;
+            width: 120px;
         }
     }
     .form-title {

@@ -1,0 +1,37 @@
+.main {
+    background: $grey;
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        > h1 {
+            font-size: larger;
+        }
+        > i {
+            margin-right: 5px;
+        }
+    }
+    .form-page  {
+        padding: 2px;
+        &__fieldset {
+            padding: 5px;
+            > hr {
+                width: 30px;
+                color: $color-tertiary;
+            }
+        }
+    }
+    .fieldset {
+        padding: 5px;
+        &__title {
+            text-transform: uppercase;
+        }
+        &__field {
+            background: white;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    }
+}
+
