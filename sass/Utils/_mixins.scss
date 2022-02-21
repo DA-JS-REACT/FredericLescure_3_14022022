@@ -2,12 +2,17 @@
 
 @mixin title {
     padding: 10px;
-    margin-left: 15px;
+    margin-left: $contain-margin - 5;
     font-weight: lighter;
 }
 /******* box shadow ********/
 @mixin shadow($x,$y,$radius) {
     box-shadow: $x+px $y+px $radius+px rgba(0, 0, 0, 0.219);
+}
+
+@mixin Bg-grey ($light) {
+    background: colorGrey($light);
+
 }
 
 /******* btn-form ************/
@@ -24,6 +29,7 @@
     @include shadow(1,1,5);
     &--page {
         width: 150px;
+        margin: 20px 0px 20px;
     }
 }
 
@@ -35,7 +41,7 @@
     margin: 10px auto 30px;
     border-radius: 16px;
     @include shadow(3,3,5);
-    background: $grey;
+    @include Bg-grey(95);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -114,5 +120,20 @@
         }
     }
 }
+
+/***************PAGE*****************/
+
+/***** field form *******/
+
+@mixin field {
+    border-radius: 16px;
+    background-color: white;
+    @include shadow(3,3,5);
+    width: 92%;
+    margin: 15px auto;
+    padding: 12px 10px;
+}
+
+
 
 

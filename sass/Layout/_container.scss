@@ -1,5 +1,5 @@
 .container {
-    background: $grey;
+    @include Bg-grey(95);
     padding: 15px 0 40px;
     &__title {
         @include title;
@@ -44,7 +44,7 @@
         }
     }
     &__btn{
-        margin-right: 20px;
+        margin-right: $contain-margin;
         padding-top: 10px;
         &__heart{
             border: none;

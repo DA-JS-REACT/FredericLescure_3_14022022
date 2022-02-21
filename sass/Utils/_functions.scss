@@ -1,0 +1,6 @@
+@function colorGrey($light:50%) {
+    $hue:0;
+    $sat:0;
+    $grey-light:hsl($hue,$sat, $light);
+    @return $grey-light;
+}

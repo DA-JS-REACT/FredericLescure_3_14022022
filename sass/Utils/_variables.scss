@@ -6,13 +6,13 @@ $color-tertiary: #99E2D0;
 $color-text-btn: white;
 $color-footer:white;
 
-$grey: #F0F0F0;
-$grey-dark: darken($grey, 10%);
+
 $color-primary-light: lighten($color-primary, 36%);
 
 /********* margin and padding *********/
 $padding-TB:10px 0 10px;
 $layout-margin_bottom:30px;
+$contain-margin: 20px;
 
 
 
@@ -20,7 +20,7 @@ $layout-margin_bottom:30px;
 $numbers-tutorial: 1,2,3;
 
 
-/*******  img card  ******/
+/*******  img ******/
 
 $img:(
     "first" : 'public/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg',

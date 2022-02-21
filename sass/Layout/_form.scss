@@ -1,11 +1,11 @@
 .form {
-    background: $grey;
+    background: colorGrey(95);
     margin-bottom: $layout-margin_bottom;
     text-align: center;
     padding-bottom: 30px;
     .form-field {
-        color: grey;
-        background: $grey-dark;
+       @include Bg-grey(80);
+       color: colorGrey(50);
         height: 40px;
         box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.219);
         display: flex;
@@ -16,9 +16,9 @@
             width: 20px;
         }
         &__search{
-            color: grey;
+            @include Bg-grey(80);
+            color: colorGrey(50);
             font-weight: bold;
-            background: $grey-dark;
             appearance: none;
             border: none;
             padding-left:10px;

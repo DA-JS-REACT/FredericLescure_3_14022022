@@ -1,37 +1,88 @@
-.main {
-    background: $grey;
-    &__title {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        > h1 {
-            font-size: larger;
-        }
-        > i {
-            margin-right: 5px;
-        }
+
+.container-page {
+    &__bg {
+        @include imgCard;
+        height: 200px;
+        width: 100%;
+        position: relative;
+        margin-bottom: -50px;
+        z-index: 2;
     }
-    .form-page  {
-        padding: 2px;
-        &__fieldset {
+    .main {
+        @include Bg-grey(95);
+        border-radius: 60px 60px 0px 0px;
+        padding-bottom: 40px;
+        position: relative;
+        z-index: 50;
+        &__title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding:40px 20px;
+            > h1 {
+                font-size:x-large;
+                font-weight: normal;
+            }
+            > i {
+                margin-right: 5px;
+                font-size: 1.5rem;
+            }
+        }
+        .form-page  {
+            padding: 2px;
+            text-align: center;
+            &__fieldset {
+                padding: 5px;
+                text-align: start;
+                > hr {
+                    width: 30px;
+                    color: $color-tertiary;
+                    margin-left: $contain-margin + 10;
+                }
+            }
+        }
+        .fieldset {
             padding: 5px;
-            > hr {
-                width: 30px;
-                color: $color-tertiary;
+            border: none;
+            margin-top: $contain-margin;
+            &__title {
+                text-transform: uppercase;
+                font-weight: normal;
+                margin-bottom: 2px;
+                margin-left: $contain-margin - 10;
+            }
+            &__field {
+                background: white;
+                margin-top: 10px;
+                padding: 5px;
+            }
+        }
+        .field {
+            @include field;
+            &__title {
+                font-size: large;
+            }
+            &__info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 3px;
+                &__text {
+                    font-size: 0.9rem;
+                }
+                &__price {
+                    margin-right: $contain-margin;
+                }
             }
         }
     }
-    .fieldset {
-        padding: 5px;
-        &__title {
-            text-transform: uppercase;
-        }
-        &__field {
-            background: white;
-            margin-bottom: 10px;
-            padding: 5px;
-        }
-    }
 }
+
+
+
+
+
+
 
