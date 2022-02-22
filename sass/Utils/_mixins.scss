@@ -1,0 +1,140 @@
+/*    generic title       */
+
+@mixin title {
+    padding: 10px;
+    margin-left: $contain-margin - 5;
+    font-weight: lighter;
+}
+/******* box shadow ********/
+@mixin shadow($x,$y,$radius) {
+    box-shadow: $x+px $y+px $radius+px rgba(0, 0, 0, 0.219);
+}
+
+@mixin Bg-grey ($light) {
+    $lighten: $light * 1%;
+    background: colorGrey($lighten);
+
+}
+
+/******* btn-form ************/
+
+@mixin btn {
+    border: none;
+    border-radius: 20px;
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    color: $color-text-btn;
+    cursor: pointer;
+    background: linear-gradient(to top left,$color-primary,35%,$color-secondary);
+    @include shadow(1,1,5);
+    &--page {
+        width: 150px;
+        margin: 20px 0px 20px;
+    }
+}
+
+
+/******** tutorial  ***********/
+@mixin tutorial {
+    width: 80%;
+    height: 3.1rem;
+    margin: 10px auto 30px;
+    border-radius: 16px;
+    @include shadow(3,3,5);
+    @include Bg-grey(95);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    &:hover :not(.tutorial-div__text) {
+        color: $color-primary;
+    }
+    &:hover{
+        background-color: $color-primary-light;
+    }
+    &::before {
+        content:"";
+        position: absolute;
+        left: -3%;
+        height: 18px;
+        width: 18px;
+        background-color: $color-primary;
+        color: white;
+        border-radius: 50%;
+        text-align:center;
+        padding: 2px 2px 0px;
+        font-size: small;
+    }
+    @each $number in $numbers-tutorial {
+        &--#{$number}::before{
+            content:"#{$number}";
+        }
+    }
+}
+
+// @for $i from 1 through 3 {
+//     &--#{$i} ::before {
+//         content:"#{$i}";
+//         position: absolute;
+//         left: -3%;
+//         height: 18px;
+//         width: 18px;
+//         background-color: $color-primary;
+//         color: white;
+//         border-radius: 50%;
+//         text-align:center;
+//         padding: 2px 2px 0px;
+//         font-size: small;
+//     }
+//     }
+
+/****** for tag New on card  ******/
+
+@mixin new {
+    text-align: center;
+    background-color: $color-tertiary;
+    color: darken($color: $color-tertiary, $amount: 50%);
+    border-radius: 5%;
+    position: absolute;
+    width: 70px;
+    padding: 5px;
+    right: 5%;
+    top: 8%;
+    z-index: 10;
+}
+
+
+/********* img  *************/
+@mixin imgCard {
+    @each $position, $name in  $img {
+        &--#{$position}{
+            background: url("../../"+ #{$name});
+            background-size: cover;
+            background-repeat: no-repeat;
+            @if($position == "second" ){
+                background-position: center;
+            }@else {
+                background-position: bottom;
+            }
+        }
+    }
+}
+
+/***************PAGE*****************/
+
+/***** field form *******/
+
+@mixin field {
+    border-radius: 16px;
+    background-color: white;
+    @include shadow(3,3,5);
+    width: 92%;
+    margin: 15px auto;
+    padding: 12px 10px;
+}
+
+
+
+

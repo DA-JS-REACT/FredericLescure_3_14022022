@@ -1,0 +1,22 @@
+.tutorial {
+    margin-bottom: $layout-margin_bottom;
+    .tutorial-title{
+       @include title;
+    }
+    .tutorial-div{
+        @include tutorial;
+        padding: 5px;
+        & i{
+            text-align: end;
+            margin-left: $contain-margin + 10;
+        }
+        &__text{
+            text-align: start;
+            font-weight: 400;
+            margin-left: $contain-margin;
+        }
+        &--1 > p{
+            margin-left: $contain-margin + 5;
+        }
+    }
+}

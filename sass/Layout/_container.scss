@@ -1,0 +1,71 @@
+.container {
+    @include Bg-grey(95);
+    padding: 15px 0 40px;
+    &__title {
+        @include title;
+        margin-top: 30px;
+    }
+    &__link {
+        width: 90%;
+        margin: 20px auto 10px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: default;
+        @include shadow(3,3,5);
+    }
+}
+.article-div{
+    display: flex;
+    flex-direction: column;
+    &__img {
+        width: 100%;
+        height: 170px;
+        position: relative;
+        z-index: 1;
+        & > span {
+           @include new;
+        }
+      @include imgCard;
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 8px;
+        padding: 5px;
+        &__text{
+            font-weight: lighter;
+            font-style: normal;
+            padding: 5px;
+
+        }
+    }
+    &__btn{
+        margin-right: $contain-margin;
+        padding-top: 10px;
+        &__heart{
+            border: none;
+            background: none;
+            cursor: pointer;
+            color: rgba(0, 0, 0, 0.76);
+        }
+        &__heart:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+            content: "\f004";
+            font-size: 1.6rem;
+            transition: color 0.5s ease-in;
+        }
+        &__heart:hover:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f004";
+            font-size: 1.6rem;
+            color:$color-secondary;
+        }
+    }
+
+}
