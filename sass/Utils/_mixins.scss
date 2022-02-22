@@ -11,7 +11,8 @@
 }
 
 @mixin Bg-grey ($light) {
-    background: colorGrey($light);
+    $lighten: $light * 1%;
+    background: colorGrey($lighten);
 
 }
 
