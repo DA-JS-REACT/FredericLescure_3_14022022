@@ -55,15 +55,46 @@
             &__field {
                 background: white;
                 margin-top: 10px;
-                padding: 5px;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+                @include field;
             }
-        }
-        .field {
-            @include field;
-            // transform-origin: left;
             &__load{
               @include animation-load;
+              &:hover{
+                  @for $i from 1 through 3 {
+                      &--#{$i} {
+                          
+                      }
+                  }
+              }
             }
+            &:hover {
+                .field-body {
+                    width: 80%;
+                    &__info__text{
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: clip ellipsis;
+                        padding-right:5px;
+                        width: 210px;
+
+                    }
+                    &__info__price{
+                        width: 30px;
+                        margin-right: 0;
+                    }
+                }
+                .field-check {
+                    width: 20%;
+                }
+            }
+        }
+        .field-body {
+            width: 100%;
+            padding: 12px 10px;
+            cursor: pointer;
             &__title {
                 font-size: large;
             }
@@ -75,16 +106,24 @@
                 margin-top: 3px;
                 &__text {
                     font-size: 0.9rem;
+                    width: 80%;
                 }
-                &__price {
-                    margin-right: $contain-margin;
-                    &hover{
-                        margin-right: -10px;
-                    }
+                &__price{
+                    margin-right: 20px;
                 }
-
             }
 
+        }
+        .field-check {
+            background-color: $color-tertiary;
+            width: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            > i {
+                font-size: 1.8rem;
+                filter: invert(100%);
+            }
         }
     }
 }
