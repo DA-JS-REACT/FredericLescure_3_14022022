@@ -38,7 +38,7 @@
                 > hr {
                     width: 30px;
                     color: $color-tertiary;
-                    margin-left: $contain-margin + 10;
+                    margin-left: $contain-margin - 10;
                 }
             }
         }
@@ -60,6 +60,10 @@
         }
         .field {
             @include field;
+            // transform-origin: left;
+            &__load{
+              @include animation-load;
+            }
             &__title {
                 font-size: large;
             }
@@ -74,11 +78,18 @@
                 }
                 &__price {
                     margin-right: $contain-margin;
+                    &hover{
+                        margin-right: -10px;
+                    }
                 }
+
             }
+
         }
     }
 }
+
+
 
 
 

@@ -5,7 +5,7 @@
     padding-bottom: 30px;
     .form-field {
        @include Bg-grey(80);
-       color: colorGrey(50);
+        color: colorGrey(50);
         height: 40px;
         box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.219);
         display: flex;

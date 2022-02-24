@@ -46,6 +46,7 @@
     &__btn{
         margin-right: $contain-margin;
         padding-top: 10px;
+        width: 28px;
         &__heart{
             border: none;
             background: none;
@@ -57,14 +58,19 @@
             font-weight: 400;
             content: "\f004";
             font-size: 1.6rem;
-            transition: color 0.5s ease-in;
+            transition: color 0.5s ease-in-out;
         }
         &__heart:hover:before {
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
             content: "\f004";
             font-size: 1.6rem;
-            color:$color-secondary;
+            // color:$color-secondary;
+            display: block;
+            background: -webkit-linear-gradient($color-primary,$color-secondary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
 
