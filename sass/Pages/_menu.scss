@@ -1,5 +1,9 @@
 
 .container-page {
+    @include tablet-only{
+      background: colorGrey(90);
+      padding-bottom: 20px;
+     }
     &__bg {
         @include imgCard;
         height: 200px;
@@ -7,6 +11,9 @@
         position: relative;
         margin-bottom: -50px;
         z-index: 2;
+        @include tablet-only{
+           height: 250px;
+         }
     }
     .main {
         @include Bg-grey(95);
@@ -14,6 +21,11 @@
         padding-bottom: 40px;
         position: relative;
         z-index: 50;
+        @include tablet-only{
+           @include tablet;
+           margin-bottom: 0;
+           border-radius: 60px;
+         }
         &__title {
             display: flex;
             flex-direction: row;
@@ -41,6 +53,9 @@
                     height: 1px;
                     margin-left: $contain-margin - 10;
                     background: $color-tertiary;
+                    @include tablet-only {
+                        display: none;
+                    }
                 }
             }
         }
@@ -53,6 +68,13 @@
                 font-weight: normal;
                 margin-bottom: 2px;
                 margin-left: $contain-margin - 10;
+                @include tablet-only {
+                    text-align: center;
+                    width: 15%;
+                    margin: 0 auto;
+                    border-bottom: 1px solid $color-tertiary ;
+                    padding-bottom: 10px;
+                }
             }
             &__field {
                 background: white;
@@ -66,26 +88,6 @@
               @include animation-load;
 
             }
-        @for $i from 1 through 3 {
-            &__load--#{$i}:active{
-                .field-body {
-                    width: 70%;
-                    &__info__text{
-                        width: 210px;
-                    }
-                    &__info__price{
-                        transform: translateX(0px);
-                    }
-                }
-                .field-check {
-                    width: 30%;
-                    animation: check 0.5s cubic-bezier(0,.68,.47,.99)  both;
-                    > i {
-                        transform: rotate(1turn);
-                    }
-                    }
-                }
-                }
         }
         .field-body {
             width: 100%;
@@ -106,12 +108,16 @@
                     text-overflow: clip ellipsis;
                     padding-right:5px;
                     width: 250px;
+                    @include tablet-only{
+                       width: 80%;
+                     }
                 }
                 &__price{
-                    width: 30px;
-                    text-align: end;
                     transform: translateX(25px);
                     transition: transform 0.4s ease-out 0.1s backwards;
+                    @include tablet-only {
+                        transform: translateX(35px);
+                    }
                 }
             }
 
@@ -128,6 +134,31 @@
                 transform: rotate(0turn);
                 transition: transform 0.8s;
             }
+        }
+        .fieldset {
+            @for $i from 1 through 3 {
+                &__load--#{$i}:active{
+                    .field-body {
+                        width: 70%;
+                        &__info__text{
+                            width: 210px;
+                        }
+                        &__info__price{
+                            transform: translateX(0px);
+                            @include tablet-only {
+                                transform: translateX(25px);
+                            }
+                        }
+                    }
+                    .field-check {
+                        width: 30%;
+                        animation: check 0.5s cubic-bezier(0,.68,.47,.99)  both;
+                        > i {
+                            transform: rotate(1turn);
+                        }
+                        }
+                    }
+                    }
         }
     }
 }

@@ -3,6 +3,9 @@
     margin-bottom: $layout-margin_bottom;
     text-align: center;
     padding-bottom: 30px;
+    @include tablet-only {
+        @include tablet;
+    }
     .form-field {
        @include Bg-grey(80);
         color: colorGrey(50);
@@ -12,8 +15,14 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        @include desktop-only {
+            height: 60px;
+        }
         &__label {
             width: 20px;
+            @include desktop-only {
+                width: 30px;
+            }
         }
         &__search{
             @include Bg-grey(80);
@@ -23,6 +32,12 @@
             border: none;
             padding-left:10px;
             width: 120px;
+            @include desktop-only {
+                width: 200px;
+                height: 30px;
+                margin-left: 10px;
+                
+            }
         }
     }
     .form-title {

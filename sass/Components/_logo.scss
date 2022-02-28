@@ -1,7 +1,16 @@
 .logo {
     width: 60%;
+    @include desktop-only{
+        max-width: 55%;
+    }
     &--footer {
         width: 30%;
         filter: invert(100%);
+        @include tablet-only{
+            width: 20%;
+         }
+         @include desktop-only{
+            width: 10%;
+        } 
     }
 }

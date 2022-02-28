@@ -28,3 +28,12 @@ $img:(
     "third" :'public/img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg',
     "fourth":'public/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg',
 );
+
+
+/********  breakpoints ***********/
+
+$breakpoints: (
+    mobile: 768px,
+    tablet: 1023px,
+    desktop: 1024px
+);

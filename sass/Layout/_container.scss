@@ -1,9 +1,18 @@
 .container {
     @include Bg-grey(95);
     padding: 15px 0 40px;
+    @include tablet-only {
+        @include tablet;
+        border-radius: 16px;
+    }
     &__title {
         @include title;
         margin-top: 30px;
+        @include tablet-only{
+            text-align: center;
+            width: 50%;
+            margin:0px auto;
+         }
     }
     &__link {
         width: 90%;
@@ -14,6 +23,9 @@
         overflow: hidden;
         cursor: default;
         @include shadow(3,3,5);
+        @include tablet-only{
+            width: 80%;
+         }
     }
 }
 .article-div{

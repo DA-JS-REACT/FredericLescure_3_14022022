@@ -18,8 +18,18 @@
     &__logo {
         width: 80%;
         display:flex;
+
         align-items: center;
         padding-left: 30px;
+        @include tablet-only {
+            width: 70%;
+            padding-left: 55px;
+        }
+        @include desktop-only {
+           max-width: 50%;
+           padding-left: 50px;
+           justify-content: center;
+        }
     }
 
 }

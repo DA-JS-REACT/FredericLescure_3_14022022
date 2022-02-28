@@ -47,6 +47,10 @@
     align-items: center;
     position: relative;
     cursor: pointer;
+    @include tablet-only {
+        width: 70%;
+        justify-content: center;
+    }
     &:hover :not(.tutorial-div__text) {
         color: $color-primary;
     }
@@ -56,7 +60,8 @@
     &::before {
         content:"";
         position: absolute;
-        left: -3%;
+        left: -10px;
+        top: 20px;
         height: 18px;
         width: 18px;
         background-color: $color-primary;
@@ -117,6 +122,9 @@
             }@else {
                 background-position: bottom;
             }
+            @include tablet-only{
+              background-position: center;
+             }
         }
     }
 }
@@ -131,6 +139,9 @@
     @include shadow(3,3,5);
     width: 95%;
     margin: 15px auto;
+    @include tablet-only{
+       width: 70%;
+     }
 }
 
 /************************animation **************************/
@@ -186,6 +197,29 @@
        opacity: 1;
 
     }
+}
+
+
+
+/***********  braekpoints responsives *****************/
+
+@mixin tablet-only {
+    @media all and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)){
+        @content;
+
+    }
+}
+
+@mixin desktop-only {
+    @media all and (min-width: map-get($breakpoints, desktop)){
+        @content;
+
+    }
+}
+
+@mixin tablet {
+    width: 90%;
+    margin: 10px auto;
 }
 
 
