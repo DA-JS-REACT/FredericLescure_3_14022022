@@ -203,6 +203,13 @@
 
 /***********  braekpoints responsives *****************/
 
+@mixin footer-only {
+    @media all and (min-width: map-get($breakpoints, mobile)){
+        @content;
+
+    }
+}
+
 @mixin tablet-only {
     @media all and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)){
         @content;
