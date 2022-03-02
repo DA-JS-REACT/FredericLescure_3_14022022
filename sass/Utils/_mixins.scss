@@ -47,10 +47,7 @@
     align-items: center;
     position: relative;
     cursor: pointer;
-    @include tablet-only {
-        width: 70%;
-        justify-content: center;
-    }
+
     &:hover :not(.tutorial-div__text) {
         color: $color-primary;
     }
@@ -70,6 +67,13 @@
         text-align:center;
         padding: 2px 2px 0px;
         font-size: small;
+        @include desktop-only {
+            height: 20px;
+            width: 20px;
+            left:20px;
+            top:18px;
+            padding: 3px 2px 0px;
+        }
     }
     @each $number in $numbers-tutorial {
         &--#{$number}::before{
@@ -139,9 +143,6 @@
     @include shadow(3,3,5);
     width: 95%;
     margin: 15px auto;
-    @include tablet-only{
-       width: 70%;
-     }
 }
 
 /************************animation **************************/
@@ -221,6 +222,11 @@
     @media all and (min-width: map-get($breakpoints, desktop)){
         @content;
 
+    }
+}
+@mixin landscape-only {
+    @media all and (min-width:667px) and (orientation:landscape){
+        @content;
     }
 }
 

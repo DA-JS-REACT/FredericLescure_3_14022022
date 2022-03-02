@@ -4,8 +4,7 @@
         @include tablet;
     }
     .tutorial-title{
-       @include title;
-      
+        @include title;
         @include tablet-only{
             text-align: center;
             width: 50%;
@@ -13,12 +12,20 @@
             background-color: colorGrey(95);
             border-radius: 16px;
             @include shadow(3,3,5);
-
          }
     }
     .tutorial-div{
         @include tutorial;
         padding: 5px;
+        @include tablet-only {
+            width: 70%;
+            justify-content: center;
+        }
+        @include desktop-only {
+            flex-direction: row-reverse;
+            justify-content: center;
+            width: 40%;
+        }
         & i{
             text-align: end;
             margin-left: $contain-margin + 10;
@@ -42,7 +49,6 @@
         }
         &--1 > i {
             @include tablet-only{
-
                  padding-left: 10px;
              }
         }

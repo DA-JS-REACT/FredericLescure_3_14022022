@@ -21,7 +21,8 @@
         &__label {
             width: 20px;
             @include desktop-only {
-                width: 30px;
+                width: 35px;
+                text-align: end
             }
         }
         &__search{
@@ -35,8 +36,7 @@
             @include desktop-only {
                 width: 200px;
                 height: 20px;
-                margin-left: 10px;
-                
+                padding-left: 20px;
             }
         }
     }

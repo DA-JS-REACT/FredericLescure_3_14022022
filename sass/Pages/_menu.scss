@@ -4,6 +4,10 @@
       background: colorGrey(90);
       padding-bottom: 20px;
      }
+     @include desktop-only{
+        background: colorGrey(95);
+        padding-bottom: 20px;
+       }
     &__bg {
         @include imgCard;
         height: 200px;
@@ -14,6 +18,11 @@
         @include tablet-only{
            height: 250px;
          }
+         @include desktop-only{
+            margin-bottom: -60px;
+            height: 350px;
+            background-position: 0% 80%;
+          }
     }
     .main {
         @include Bg-grey(95);
@@ -26,15 +35,26 @@
            margin-bottom: 0;
            border-radius: 60px;
          }
+         @include desktop-only {
+             width: 65%;
+             margin: 10px auto;
+             @include shadow(1,1,3);
+         }
         &__title {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding:40px 20px;
+            @include desktop-only {
+                justify-content: center;
+            }
             > h1 {
                 font-size:x-large;
                 font-weight: normal;
+                @include desktop-only {
+                    margin-right: 10px;
+                }
             }
             > i {
                 margin-right: 5px;
@@ -83,6 +103,16 @@
                 flex-direction: row;
                 overflow: hidden;
                 @include field;
+                @include landscape-only{
+                    width: 80%;
+                }
+                @include tablet-only{
+                    width: 70%;
+                }
+                @include desktop-only {
+                    width: 60%;
+                }
+
             }
             &__load{
               @include animation-load;
@@ -105,26 +135,16 @@
                     font-size: 0.9rem;
                     white-space: nowrap;
                     overflow: hidden;
-                    text-overflow: clip ellipsis;
+                    text-overflow: ellipsis;
                     padding-right:5px;
-                    width: 250px;
-                    @include tablet-only{
-                       width: 80%;
-                     }
-                }
-                &__price{
-                    transform: translateX(25px);
-                    transition: transform 0.4s ease-out 0.1s backwards;
-                    @include tablet-only {
-                        transform: translateX(35px);
-                    }
+                    width: 90%;
                 }
             }
 
         }
         .field-check {
             background-color: $color-tertiary;
-            width: 0%;
+            width: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -137,21 +157,44 @@
         }
         .fieldset {
             @for $i from 1 through 3 {
-                &__load--#{$i}:active{
+                &__load--#{$i}:hover{
                     .field-body {
                         width: 70%;
-                        &__info__text{
-                            width: 210px;
+                        @include landscape-only{
+                            width: 80%;
                         }
-                        &__info__price{
-                            transform: translateX(0px);
-                            @include tablet-only {
-                                transform: translateX(25px);
+                        @include tablet-only{
+                            width: 80%;
+                        }
+                        @include desktop-only{
+                            width: 89%;
+                        }
+                        transition: width 0.7s cubic-bezier(0,.68,.47,.99);
+                        &__info__text{
+                            width: 85%;
+                            // @include landscape-only{
+                            //     width: 89%;
+                            // }
+                            // @include tablet-only{
+                            //     width: 360px;
+                            // }
+                            @include desktop-only{
+                                width: 90%;
                             }
+                            transition: width 0.7s linear;
                         }
                     }
                     .field-check {
                         width: 30%;
+                        @include landscape-only{
+                            width: 20%;
+                        }
+                        @include tablet-only{
+                            width: 20%;
+                        }
+                        @include desktop-only{
+                            width: 10%;
+                        }
                         animation: check 0.5s cubic-bezier(0,.68,.47,.99)  both;
                         > i {
                             transform: rotate(1turn);
