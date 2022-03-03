@@ -76,6 +76,9 @@
                     @include tablet-only {
                         display: none;
                     }
+                    @include desktop-only {
+                      display: none;
+                    }
                 }
             }
         }
@@ -92,7 +95,14 @@
                     text-align: center;
                     width: 15%;
                     margin: 0 auto;
-                    border-bottom: 1px solid $color-tertiary ;
+                    border-bottom: 1px $color-tertiary ;
+                    padding-bottom: 10px;
+                }
+                @include desktop-only {
+                    text-align: center;
+                    width: 10%;
+                    margin: 0 auto;
+                    border-bottom:2px groove $color-tertiary ;
                     padding-bottom: 10px;
                 }
             }

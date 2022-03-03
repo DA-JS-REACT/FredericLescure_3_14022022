@@ -14,10 +14,9 @@
     }
     &-div__list {
         @include footer-only{
-            width: 90%;
+            width: 95%;
             margin: 0 auto;
             display: flex;
-            justify-content: center;
         }
     }
     .list {
@@ -25,15 +24,15 @@
         margin-left: 20px;
         list-style: none;
         @include footer-only {
+            width: 100%;
             display: flex;
             flex-direction: row;
-            padding-right: 15px;
+            justify-content: space-around;
+            margin-left: 0;
+            padding: 0 20px;
         }
         &-item{
             margin-top: 5px;
-            @include footer-only{
-                margin-left: 20px;
-            }
         }
         &-item > a, &-item > i {
             color: $color-footer;
@@ -43,7 +42,6 @@
             font-size: 0.9rem;
             @include footer-only{
                 margin-right: 5px;
-                font-size: 0.8rem;
             }
         }
         &-item:nth-child(2n) > i{

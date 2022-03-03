@@ -3,6 +3,12 @@
     @include tablet-only {
         @include tablet;
     }
+    @include desktop-only{
+        width: 90%;
+        margin: 10px auto 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
     .tutorial-title{
         @include title;
         @include tablet-only{
@@ -12,19 +18,23 @@
             background-color: colorGrey(95);
             border-radius: 16px;
             @include shadow(3,3,5);
-         }
+        }
+        @include desktop-only {
+            text-align: center;
+            width: 100%;
+        }
     }
     .tutorial-div{
         @include tutorial;
         padding: 5px;
         @include tablet-only {
-            width: 70%;
+            width: 60%;
             justify-content: center;
         }
         @include desktop-only {
             flex-direction: row-reverse;
             justify-content: center;
-            width: 40%;
+            width: 30%;
         }
         & i{
             text-align: end;
