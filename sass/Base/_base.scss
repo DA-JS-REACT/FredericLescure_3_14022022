@@ -15,3 +15,49 @@ body {
 a {
     text-decoration: none;
 }
+
+.loader {
+    border:10px solid #99E2D0;
+   border-top: 10px solid #9356DC;
+   border-bottom: 10px solid #FF79DA;
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+   margin: auto;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: -20;
+   opacity: 1;
+   visibility: hidden;
+   animation:hidden 6s linear both , spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hidden {
+    0% {
+        opacity: 1;
+        z-index: -20;
+        visibility:visible;
+    }
+    10%{
+        opacity: 1;
+        z-index: 100;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: 100;
+
+    }
+}
