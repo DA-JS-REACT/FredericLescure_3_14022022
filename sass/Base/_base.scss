@@ -7,9 +7,14 @@ font-family: 'Shrikhand', cursive;
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
+    scrollbar-width: thin;
+    @include bool($loader:false);
+    animation: test 4s;
+
 }
 
 a {
@@ -18,22 +23,24 @@ a {
 
 .loader {
     border:10px solid #99E2D0;
-   border-top: 10px solid #9356DC;
-   border-bottom: 10px solid #FF79DA;
-   border-radius: 50%;
-   width: 100px;
-   height: 100px;
-   margin: auto;
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   z-index: -20;
-   opacity: 1;
-   visibility: hidden;
-   animation:hidden 6s linear both , spin 2s linear infinite;
+    border-top: 10px solid #9356DC;
+    border-bottom: 10px solid #FF79DA;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(0);
+    visibility: hidden;
+    z-index: 100;
+    animation: hide 4s both , spin 2s linear infinite;
+
 }
+
 
 @keyframes spin {
     0%{
@@ -44,20 +51,25 @@ a {
     }
 }
 
-@keyframes hidden {
+@keyframes hide {
     0% {
-        opacity: 1;
-        z-index: -20;
+        transform: scale(0);
         visibility:visible;
     }
-    10%{
-        opacity: 1;
-        z-index: 100;
-    }
-
     100% {
-        opacity: 0;
-        z-index: 100;
+        transform: scale(1);
+    }
+}
+
+@keyframes test {
+    0%{
+        @include bool($loader:false);
+    }
+    1%{
+        @include bool($loader:true);
+    }
+    100% {
+        @include bool($loader:true);
 
     }
 }

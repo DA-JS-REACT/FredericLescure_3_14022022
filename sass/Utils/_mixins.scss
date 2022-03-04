@@ -232,5 +232,12 @@
 }
 
 
+@mixin bool($loader: false) {
+    @if  $loader {
+        cursor: wait;
+    }
+
+}
+
 
 
