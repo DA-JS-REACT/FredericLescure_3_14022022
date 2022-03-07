@@ -20,12 +20,12 @@
         display:flex;
         justify-content: center;
         align-items: center;
-        padding-right: 40px;
+        padding-right: 30px;
         @include tablet-only{
-            padding-right: 45px;
+            padding-right: 35px;
         }
         @include desktop-only{
-            padding-right: 60px;
+            padding-right: 40px;
         }
     }
 

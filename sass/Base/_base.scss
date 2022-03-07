@@ -11,10 +11,6 @@ font-family: 'Shrikhand', cursive;
 body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
-    scrollbar-width: thin;
-    @include bool($loader:false);
-    animation: test 4s;
-
 }
 
 a {
@@ -22,14 +18,10 @@ a {
 }
 
 .loader {
-    border:10px solid #99E2D0;
-    border-top: 10px solid #9356DC;
-    border-bottom: 10px solid #FF79DA;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin: auto;
+    max-width: 300px;
+    max-height: 300px;
     position: absolute;
+    margin: auto;
     top: 0;
     left: 0;
     right: 0;
@@ -37,8 +29,73 @@ a {
     transform: scale(0);
     visibility: hidden;
     z-index: 100;
-    animation: hide 4s both , spin 2s linear infinite;
+    cursor: wait;
+    animation: hide 4s both;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+    &__circle {
+        border:5px solid #99E2D0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        animation: spin 2s linear infinite ;
+        @include tablet-only {
+            border-width: 8px;
+            width: 140px;
+            height: 140px;
+        }
+        @include desktop-only {
+            border-width: 10px;
+            width: 160px;
+            height: 160px;
+        }
+    }
+    &__text {
+        width: 150px;
+        position: relative;
+        z-index: 120;
+        left: 35px;
+        bottom: 75px;
+        font-size: x-large;
+        font-weight: bolder;
+        background: $color-loader;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        .flash {
+            animation: clignoter .8s infinite;
+            &--2{
+                animation-delay: 0.1s;
+            }
+            &--3{
+                animation-delay: 0.2s;
+            }
+        }
+        @include tablet-only {
+            font-size: xx-large;
+            left: 30px;
+            bottom: 95px;
+        }
+        @include desktop-only {
+            font-size: xx-large;
+            bottom: 110px;
+        }
+    }
+
+}
+
+.loader-contain {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    @include bool($loader:false);
+    animation: tempory  4s ease-in;
 }
 
 
@@ -53,7 +110,7 @@ a {
 
 @keyframes hide {
     0% {
-        transform: scale(0);
+        transform: scale(1);
         visibility:visible;
     }
     100% {
@@ -61,7 +118,7 @@ a {
     }
 }
 
-@keyframes test {
+@keyframes tempory {
     0%{
         @include bool($loader:false);
     }
@@ -73,3 +130,15 @@ a {
 
     }
 }
+
+@keyframes clignoter {
+    0% {
+        opacity:1;
+    }
+    40% {
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+  }

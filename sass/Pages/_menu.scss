@@ -95,7 +95,7 @@
                     text-align: center;
                     width: 15%;
                     margin: 0 auto;
-                    border-bottom: 1px $color-tertiary ;
+                    border-bottom: 1px solid $color-tertiary ;
                     padding-bottom: 10px;
                 }
                 @include desktop-only {
