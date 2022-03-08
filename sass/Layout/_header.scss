@@ -1,0 +1,32 @@
+.header {
+    padding:$padding-TB;
+    display: flex;
+    flex-direction: row;
+    &__link {
+        width: 20px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        &--home {
+            display:none;
+        }
+        &--page {
+            display: block;
+            color:colorGrey(50);
+        }
+    }
+    &__logo {
+        width: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 30px;
+        @include tablet-only{
+            padding-right: 35px;
+        }
+        @include desktop-only{
+            padding-right: 40px;
+        }
+    }
+
+}

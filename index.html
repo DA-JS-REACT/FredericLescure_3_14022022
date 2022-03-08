@@ -8,7 +8,7 @@
 
     <!-- Link CSS -->
       <!-- Desktop First -->
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="./public/css/style.css">
 
     <!-- link fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -16,12 +16,144 @@
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,400&family=Shrikhand&display=swap" rel="stylesheet">
 
   </head>
 
 
-    <body>
-        <h1>hello</h1>
-    </body>
+  <body>
+    <div class="loader">
+        <div class="loader__circle"></div>
+        <p class="loader__text">Wait <span class="flash flash--1">.</span><span class="flash flash--2">.</span><span class="flash flash--3">.</span></p>
+    </div>
+    <div class="loader-contain">
+      <!-------------- Start header  ---------------------------->
+      <header class="header">
+        <div class="header__link">
+          <a href="index.html" class="header__link--home"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="header__logo">
+          <img src="./public/img/logo/ohmyfood.png" alt="logo OhMyFood" class="logo logo--home">
+        </div>
+      </header>
+      <!-------------- End header  ------------------------------->
+      <!-------------- Start first section ----------------------->
+      <section class="form">
+        <form action="#" class="form__base form__base--home">
+          <div class="form-field">
+            <label for="search" class="form-field__label"><i class="fas fa-map-marker-alt"></i></label>
+            <input class="form-field__search" type="search" id="search" value="Paris, Belleville">
+          </div>
+          <div class="form-title">
+            <h1 class="form-title__h1">Réservez le menu qui vous convient</h1>
+            <p class="form-title__p">Découvrez des restaurants d'exception,
+              séléctionnés par nos soins</p>
+          </div>
+          <div class="form-button">
+            <button class="form-button__btn form-button__btn--home" type="submit">Explorer nos restaurants</button>
+          </div>
+        </form>
+      </section>
+      <!-- End first section  -->
+
+      <!-------------- Start second section ---------------------->
+      <section class="tutorial">
+        <h2 class="tutorial-title">Fonctionnement</h2>
+        <div class="tutorial-div tutorial-div--1">
+          <i class="fas fa-mobile-alt"></i>
+          <p class="tutorial-div__text">Choisissez un restaurant</p>
+        </div>
+        <div class="tutorial-div tutorial-div--2">
+          <i class="fa fa-list-ul"></i>
+          <p class="tutorial-div__text">Composez votre menu</p>
+        </div>
+        <div class="tutorial-div tutorial-div--3">
+          <i class="fa fa-store"></i>
+          <p class="tutorial-div__text">Dégustez au restaurant</p>
+        </div>
+      </section>
+      <!-------------- End second section ------------------------>
+
+      <!-------------- Start Main  ---------------------------->
+      <main class="container">
+        <h2 class="container__title">Restaurants</h2>
+        <!-- Link with card -->
+        <a href="menu1.html" class="container__link">
+          <article class="article article-div">
+            <div class="article-div__img article-div__img--first"><span>Nouveau</span></div>
+            <div class="article-div__body">
+              <div class="article-div__body__text">
+                <h3 class="article-div__body__text__title">La palette du goût</h3>
+                <p class="article-div__body__text__city">Ménilmontant</p>
+              </div>
+              <div class="article-div__btn">
+                <span class="article-div__btn__heart"></span>
+              </div>
+            </div>
+          </article>
+        </a>
+        <!-- Link with card -->
+        <a href="menu2.html" class="container__link">
+          <article class="article article-div">
+            <div class="article-div__img article-div__img--second"><span>Nouveau</span></div>
+            <div class="article-div__body">
+              <div class="article-div__body__text">
+                <h3 class="article-div__body__text__title">La note enchantée</h3>
+                <p class="article-div__body__text__city">Charonne</p>
+              </div>
+              <div class="article-div__btn">
+                <span  class="article-div__btn__heart"></span>
+              </div>
+            </div>
+          </article>
+        </a>
+        <!-- Link with card -->
+        <a href="menu3.html" class="container__link">
+          <article class="article article-div">
+            <div class="article-div__img article-div__img--third"></div>
+            <div class="article-div__body">
+              <div class="article-div__body__text">
+                <h3 class="article-div__body__text__title">À la française</h3>
+                <p class="article-div__body__text__city">Cité rouge</p>
+              </div>
+              <div class="article-div__btn">
+                <span  class="article-div__btn__heart"></span>
+              </div>
+            </div>
+          </article>
+        </a>
+        <!-- Link with card -->
+        <a href="menu4.html" class="container__link">
+          <article class="article article-div">
+            <div class="article-div__img article-div__img--fourth"></div>
+            <div class="article-div__body">
+              <div class="article-div__body__text">
+                <h3 class="article-div__body__text__title">Le délice des sens</h3>
+                <p class="article-div__body__text__city">Folie-Méricourt</p>
+              </div>
+              <div class="article-div__btn">
+                <span  class="article-div__btn__heart"></span>
+              </div>
+            </div>
+          </article>
+        </a>
+      </main>
+      <!-------------- End Main  ---------------------------->
+      <!-------------- Start footer  ---------------------------->
+      <footer class="footer">
+        <div class="footer-div__logo">
+          <img src="./public/img/logo/ohmyfood.png" alt="logo OhMyFood" class="logo logo--footer">
+        </div>
+      <div class="footer-div__list">
+        <ul class="list">
+          <li class="list-item"><i class="fa fa-utensils"></i><a href="#" class="list-item__link">Proposer un restaurant</a></li>
+          <li class="list-item"><i class="fas fa-hands-helping"></i><a href="#" class="list-item__link">Devenir partenaire</a></li>
+          <li class="list-item"><a href="#" class="list-item__link">Mentions légales</a></li>
+          <li class="list-item"><a href="mailto:votreadresse@mail.fr" class="list-item__link">Contact</a></li>
+        </ul>
+      </div>
+      </footer>
+      <!-------------- End Footer  ---------------------------->
+    </div>
+  </body>
 </html>

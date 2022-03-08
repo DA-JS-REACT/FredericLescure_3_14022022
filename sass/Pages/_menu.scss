@@ -1,0 +1,221 @@
+
+.container-page {
+    @include tablet-only{
+      background: colorGrey(90);
+      padding-bottom: 20px;
+     }
+     @include desktop-only{
+        background: colorGrey(95);
+        padding-bottom: 20px;
+       }
+    &__bg {
+        @include imgCard;
+        height: 200px;
+        width: 100%;
+        position: relative;
+        margin-bottom: -50px;
+        z-index: 2;
+        @include tablet-only{
+           height: 250px;
+         }
+         @include desktop-only{
+            margin-bottom: -60px;
+            height: 350px;
+            background-position: 0% 80%;
+          }
+    }
+    .main {
+        @include Bg-grey(95);
+        border-radius: 60px 60px 0px 0px;
+        padding-bottom: 40px;
+        position: relative;
+        z-index: 50;
+        @include tablet-only{
+           @include tablet;
+           margin-bottom: 0;
+           border-radius: 60px;
+         }
+         @include desktop-only {
+             width: 65%;
+             margin: 10px auto;
+             @include shadow(1,1,3);
+         }
+        &__title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding:40px 20px;
+            @include desktop-only {
+                justify-content: center;
+            }
+            > h1 {
+                font-size:x-large;
+                font-weight: normal;
+                @include desktop-only {
+                    margin-right: 10px;
+                }
+            }
+            > i {
+                margin-right: 5px;
+                font-size: 1.5rem;
+            }
+        }
+        .form-page  {
+            padding: 2px;
+            text-align: center;
+            &__fieldset {
+                padding: 5px;
+                text-align: start;
+                > hr {
+                    width: 30px;
+                    border: 0;
+                    height: 1px;
+                    margin-left: $contain-margin - 10;
+                    background: $color-tertiary;
+                    @include tablet-only {
+                        display: none;
+                    }
+                    @include desktop-only {
+                      display: none;
+                    }
+                }
+            }
+        }
+        .fieldset {
+            padding: 5px;
+            border: none;
+            margin-top: $contain-margin;
+            &__title {
+                text-transform: uppercase;
+                font-weight: normal;
+                margin-bottom: 2px;
+                margin-left: $contain-margin - 10;
+                @include tablet-only {
+                    text-align: center;
+                    width: 15%;
+                    margin: 0 auto;
+                    border-bottom: 1px solid $color-tertiary ;
+                    padding-bottom: 10px;
+                }
+                @include desktop-only {
+                    text-align: center;
+                    width: 10%;
+                    margin: 0 auto;
+                    border-bottom:2px groove $color-tertiary ;
+                    padding-bottom: 10px;
+                }
+            }
+            &__field {
+                background: white;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                overflow: hidden;
+                @include field;
+                @include tablet-only{
+                    width: 70%;
+                }
+                @include desktop-only {
+                    width: 60%;
+                }
+
+            }
+            &__load{
+              @include animation-load;
+
+            }
+        }
+        .field-body {
+            width: 100%;
+            padding: 12px 10px;
+            cursor: pointer;
+            &__title {
+                font-size: large;
+            }
+            &__info {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 3px;
+                &__text {
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding-right:5px;
+                    width: 70vw;
+                    @include tablet-only{
+                        width: 52vw;
+                    }
+                    @include desktop-only{
+                        width: 32vw;
+                    }
+                }
+            }
+
+        }
+        .field-check {
+            background-color: $color-tertiary;
+            width: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            > i {
+                font-size: 1.8rem;
+                filter: invert(100%);
+                transform: rotate(0turn);
+                transition: transform 0.8s;
+            }
+        }
+        .fieldset {
+            @for $i from 1 through 3 {
+                &__load--#{$i}:hover{
+                    .field-body {
+                        width: 70%;
+                        @include tablet-only{
+                            width: 80%;
+                        }
+                        @include desktop-only{
+                            width: 85%;
+                        }
+                        transition: width 0.6s cubic-bezier(0,.68,.47,.99);
+                        &__info__text{
+                            @include tablet-only{
+                                width: 50vw;
+                            }
+                            @include desktop-only{
+                                width: 30vw;
+                            }
+                            transition: width 0.6s cubic-bezier(0,.68,.47,.99);
+                        }
+                    }
+                    .field-check {
+                        width: 30%;
+                        @include tablet-only{
+                            width: 20%;
+                        }
+                        @include desktop-only{
+                            width: 15%;
+                        }
+                        animation: check 0.5s cubic-bezier(0,.68,.47,.99)  both;
+                        > i {
+                            transform: rotate(1turn);
+                        }
+                        }
+                    }
+                    }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

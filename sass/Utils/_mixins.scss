@@ -1,0 +1,246 @@
+/*    generic title       */
+
+@mixin title {
+    padding: 10px;
+    margin-left: $contain-margin - 5;
+    font-weight: lighter;
+}
+/******* box shadow ********/
+@mixin shadow($x,$y,$radius) {
+    box-shadow: $x+px $y+px $radius+px rgba(0, 0, 0, 0.219);
+}
+
+@mixin Bg-grey ($light) {
+    $lighten: $light *1%;
+    background: colorGrey($lighten);
+}
+
+/******* btn-form ************/
+
+@mixin btn {
+    border: none;
+    border-radius: 20px;
+    width: 180px;
+    height: 40px;
+    padding: 5px;
+    color: $color-text-btn;
+    cursor: pointer;
+    background: linear-gradient(to top left,$color-primary,35%,$color-secondary);
+    @include shadow(1,1,5);
+    &--page {
+        width: 150px;
+        margin: 20px 0px 20px;
+    }
+}
+
+
+/******** tutorial  ***********/
+@mixin tutorial {
+    width: 80%;
+    height: 3.1rem;
+    margin: 10px auto 30px;
+    border-radius: 16px;
+    @include shadow(3,3,5);
+    @include Bg-grey(95);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &:hover :not(.tutorial-div__text) {
+        color: $color-primary;
+    }
+    &:hover{
+        background-color: $color-primary-light;
+    }
+    &::before {
+        content:"";
+        position: absolute;
+        left: -10px;
+        top: 20px;
+        height: 18px;
+        width: 18px;
+        background-color: $color-primary;
+        color: white;
+        border-radius: 50%;
+        text-align:center;
+        padding: 2px 2px 0px;
+        font-size: small;
+        @include desktop-only {
+            height: 20px;
+            width: 20px;
+            left:1vw;
+            top:18px;
+            padding: 3px 2px 0px;
+        }
+    }
+    @each $number in $numbers-tutorial {
+        &--#{$number}::before{
+            content:"#{$number}";
+        }
+    }
+}
+
+// @for $i from 1 through 3 {
+//     &--#{$i} ::before {
+//         content:"#{$i}";
+//         position: absolute;
+//         left: -3%;
+//         height: 18px;
+//         width: 18px;
+//         background-color: $color-primary;
+//         color: white;
+//         border-radius: 50%;
+//         text-align:center;
+//         padding: 2px 2px 0px;
+//         font-size: small;
+//     }
+//     }
+
+/****** for tag New on card  ******/
+
+@mixin new {
+    text-align: center;
+    background-color: $color-tertiary;
+    color: darken($color: $color-tertiary, $amount: 50%);
+    border-radius: 5%;
+    position: absolute;
+    width: 70px;
+    padding: 5px;
+    right: 5%;
+    top: 8%;
+    z-index: 10;
+}
+
+
+/********* img  *************/
+@mixin imgCard {
+    @each $position, $name in  $img {
+        &--#{$position}{
+            background: url("../../"+ #{$name});
+            background-size: cover;
+            background-repeat: no-repeat;
+            @if($position == "second" ){
+                background-position: center;
+            }@else {
+                background-position: bottom;
+            }
+            @include tablet-only{
+              background-position: center;
+             }
+        }
+    }
+}
+
+/***************PAGE*****************/
+
+/***** field form *******/
+
+@mixin field {
+    border-radius: 16px;
+    background-color: white;
+    @include shadow(3,3,5);
+    width: 95%;
+    margin: 15px auto;
+}
+
+/************************animation **************************/
+
+        /********load card ********/
+@keyframes load {
+    0%{
+        transform:translateY(20px);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100%{
+        transform:translateY(0px);
+        opacity: 1;
+    }
+}
+@mixin animation-load {
+    animation: load 1.2s ease-out both;
+    @for $i from 1 through 3 {
+        &--#{$i} {
+            $nbr:calc($i / 5);
+            animation-delay: $nbr+s;
+            @debug $nbr+s;
+        }
+    }
+}
+
+        /********check card ********/
+@keyframes check {
+    0%{
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100%{
+        transform: translateX(1px);
+       opacity: 1;
+
+    }
+}
+
+
+
+/***********  braekpoints responsives *****************/
+
+@mixin footer-only {
+    @media all and (min-width: map-get($breakpoints, mobile)){
+        @content;
+
+    }
+}
+
+@mixin tablet-only {
+    @media all and (min-width: map-get($breakpoints, mobile)) and (max-width: map-get($breakpoints, tablet)){
+        @content;
+
+    }
+}
+
+@mixin desktop-only {
+    @media all and (min-width: map-get($breakpoints, desktop)){
+        @content;
+
+    }
+}
+
+
+@mixin tablet {
+    width: 90%;
+    margin: 10px auto;
+}
+
+/*******  only loader **************/
+
+@mixin bool($loader: false) {
+    @if  $loader {
+        cursor: wait;
+        overflow-y: hidden;
+        opacity: 0.5;
+    }
+
+}
+
+
+

@@ -1,0 +1,61 @@
+.form {
+    background: colorGrey(95);
+    margin-bottom: $layout-margin_bottom;
+    text-align: center;
+    padding-bottom: 30px;
+    @include tablet-only {
+        @include tablet;
+    }
+    .form-field {
+       @include Bg-grey(80);
+        color: colorGrey(50);
+        height: 40px;
+        box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.219);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        @include desktop-only {
+            height: 50px;
+        }
+        &__label {
+            width: 20px;
+            @include desktop-only {
+                width: 35px;
+                text-align: end
+            }
+        }
+        &__search{
+            @include Bg-grey(80);
+            color: colorGrey(50);
+            font-weight: bold;
+            appearance: none;
+            border: none;
+            padding-left:10px;
+            width: 120px;
+            @include desktop-only {
+                width: 200px;
+                height: 20px;
+                padding-left: 20px;
+            }
+        }
+    }
+    .form-title {
+        margin-top: 20px;
+        &__h1{
+            width: 80%;
+            margin: 0 auto;
+            font-weight: normal;
+            line-height: 1;
+        }
+        &__p{
+            width: 300px;
+            margin: 10px auto 0;
+        }
+    }
+    .form-button{
+        margin-top: 30px;
+    }
+
+}
+
