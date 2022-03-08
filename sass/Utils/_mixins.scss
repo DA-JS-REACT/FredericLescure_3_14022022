@@ -48,10 +48,10 @@
     position: relative;
     cursor: pointer;
 
-    &:hover :not(.tutorial-div__text) {
+    &:hover :not(.tutorial-div__text),&:focus :not(.tutorial-div__text) {
         color: $color-primary;
     }
-    &:hover{
+    &:hover, &:focus{
         background-color: $color-primary-light;
     }
     &::before {

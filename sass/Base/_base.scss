@@ -15,6 +15,7 @@ body {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 .loader {
@@ -68,7 +69,10 @@ a {
         -webkit-background-clip: text;
         color: transparent;
         .flash {
-            animation: clignoter .8s infinite;
+            display: inline-block;
+            opacity:1;
+            animation: clignoter 0.8s infinite;
+            transition: none;
             &--2{
                 animation-delay: 0.1s;
             }

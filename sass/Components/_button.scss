@@ -1,6 +1,6 @@
 .form-button__btn {
     @include btn;
-    &:hover {
+    &:hover,&:active {
         @include shadow(4,4,6);
         opacity: 0.9;
     }

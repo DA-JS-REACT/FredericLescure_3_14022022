@@ -170,7 +170,7 @@
         }
         .fieldset {
             @for $i from 1 through 3 {
-                &__load--#{$i}:hover{
+                &__load--#{$i}:hover,&__load--#{$i}:active {
                     .field-body {
                         width: 70%;
                         @include tablet-only{
