@@ -11,7 +11,9 @@ font-family: 'Shrikhand', cursive;
 body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
-    opacity: 1;
+   
+}
+.body {
     @include scroll($scroll:false);
     @include animate-scroll;
 }
