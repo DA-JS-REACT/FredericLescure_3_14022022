@@ -48,10 +48,10 @@
     position: relative;
     cursor: pointer;
 
-    &:hover :not(.tutorial-div__text) {
+    &:hover :not(.tutorial-div__text),&:focus :not(.tutorial-div__text) {
         color: $color-primary;
     }
-    &:hover{
+    &:hover, &:focus{
         background-color: $color-primary-light;
     }
     &::before {
@@ -237,9 +237,54 @@
     @if  $loader {
         cursor: wait;
         overflow-y: hidden;
-        opacity: 0.5;
+        opacity: 0;
     }
 
+}
+
+@mixin event($event : false) {
+    @if  $event {
+       pointer-events: none;
+    }
+}
+
+@mixin scroll($scroll : false) {
+    @if  $scroll {
+       overflow-y: hidden;
+    }
+}
+
+@mixin animate-loader{
+    animation: tempory  3s ease-in-out;
+}
+@mixin animate-scroll{
+    animation: scroll-hidden  3s ease-in-out;
+}
+
+@keyframes tempory {
+    0%{
+        @include bool($loader:false);
+        @include event($event:false);
+    }
+    1%{
+        @include bool($loader:true);
+        @include event($event:true);
+    }
+    100% {
+        @include bool($loader:true);
+        @include event($event:true);
+    }
+}
+@keyframes scroll-hidden {
+    0%{
+        @include scroll($scroll:false);
+    }
+    1%{
+        @include scroll($scroll:true);
+    }
+    100% {
+        @include scroll($scroll:true);
+    }
 }
 
 
