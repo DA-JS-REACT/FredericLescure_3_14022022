@@ -132,6 +132,9 @@
             cursor: pointer;
             &__title {
                 font-size: large;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             &__info {
                 display: flex;
@@ -169,7 +172,7 @@
             }
         }
         .fieldset {
-            @for $i from 1 through 3 {
+            @for $i from 1 through 4 {
                 &__load--#{$i}:hover,&__load--#{$i}:active {
                     .field-body {
                         width: 70%;

@@ -128,7 +128,10 @@
             }
             @include tablet-only{
               background-position: center;
-             }
+            }
+            @include desktop-only{
+                background-position: center;
+            }
         }
     }
 }
@@ -169,7 +172,7 @@
 }
 @mixin animation-load {
     animation: load 1.2s ease-out both;
-    @for $i from 1 through 3 {
+    @for $i from 1 through 4 {
         &--#{$i} {
             $nbr:calc($i / 5);
             animation-delay: $nbr+s;
