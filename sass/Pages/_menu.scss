@@ -21,7 +21,6 @@
          @include desktop-only{
             margin-bottom: -60px;
             height: 350px;
-            background-position: 0% 80%;
           }
     }
     .main {
@@ -172,7 +171,7 @@
             }
         }
         .fieldset {
-            @for $i from 1 through 4 {
+            @for $i from 1 through $nbr-field {
                 &__load--#{$i}:hover,&__load--#{$i}:active {
                     .field-body {
                         width: 70%;
