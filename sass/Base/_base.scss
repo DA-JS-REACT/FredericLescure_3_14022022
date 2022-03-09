@@ -11,6 +11,9 @@ font-family: 'Shrikhand', cursive;
 body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
+    opacity: 1;
+    @include scroll($scroll:false);
+    @include animate-scroll;
 }
 
 a {
@@ -21,7 +24,7 @@ a {
 .loader {
     max-width: 300px;
     max-height: 300px;
-    position: absolute;
+    position: fixed;
     margin: auto;
     top: 0;
     left: 0;
@@ -31,7 +34,7 @@ a {
     visibility: hidden;
     z-index: 100;
     cursor: wait;
-    animation: hide 4s both;
+    animation: hide 3s both;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,10 +72,9 @@ a {
         -webkit-background-clip: text;
         color: transparent;
         .flash {
-            display: inline-block;
+            color: $color-primary;
             opacity:1;
-            animation: clignoter 0.8s infinite;
-            transition: none;
+            animation: flash 0.8s infinite;
             &--2{
                 animation-delay: 0.1s;
             }
@@ -99,7 +101,11 @@ a {
     width: 100%;
     height: 100%;
     @include bool($loader:false);
-    animation: tempory  4s ease-in;
+    @include animate-loader;
+    .container__link {
+        @include event($event:false);
+        @include animate-loader;
+    }
 }
 
 
@@ -122,20 +128,9 @@ a {
     }
 }
 
-@keyframes tempory {
-    0%{
-        @include bool($loader:false);
-    }
-    1%{
-        @include bool($loader:true);
-    }
-    100% {
-        @include bool($loader:true);
 
-    }
-}
 
-@keyframes clignoter {
+@keyframes flash {
     0% {
         opacity:1;
     }
@@ -146,3 +141,4 @@ a {
         opacity:1;
     }
   }
+
