@@ -82,21 +82,6 @@
     }
 }
 
-// @for $i from 1 through 3 {
-//     &--#{$i} ::before {
-//         content:"#{$i}";
-//         position: absolute;
-//         left: -3%;
-//         height: 18px;
-//         width: 18px;
-//         background-color: $color-primary;
-//         color: white;
-//         border-radius: 50%;
-//         text-align:center;
-//         padding: 2px 2px 0px;
-//         font-size: small;
-//     }
-//     }
 
 /****** for tag New on card  ******/
 
@@ -290,5 +275,9 @@
     }
 }
 
+
+@mixin counter {
+    counter-reset: nbr-field;
+}
 
 
