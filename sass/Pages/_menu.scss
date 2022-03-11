@@ -1,4 +1,3 @@
-
 .container-page {
     @include tablet-only{
       background: colorGrey(90);
@@ -21,7 +20,6 @@
          @include desktop-only{
             margin-bottom: -60px;
             height: 350px;
-            background-position: 0% 80%;
           }
     }
     .main {
@@ -56,9 +54,40 @@
                     margin-right: 10px;
                 }
             }
-            > i {
+            .heart {
                 margin-right: 5px;
                 font-size: 1.5rem;
+                padding-right:10px;
+                cursor: pointer;
+                @include tablet-only {
+                    padding-right: 25px;
+                }
+                &__after {
+                    visibility: hidden;
+                    display: none;
+                    opacity: 0;
+                }
+                &__before {
+                    visibility: visible;
+                    display: block;
+                    opacity: 1;
+                }
+                &:hover, &:active {
+                    .heart__after {
+                        visibility: visible;
+                        display: block;
+                        background: -webkit-linear-gradient($color-primary,$color-secondary);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        opacity: 1;
+                    }
+                    .heart__before {
+                        visibility: hidden;
+                        display: none;
+                        opacity: 0;
+                    }
+                }
             }
         }
         .form-page  {
@@ -131,7 +160,8 @@
             padding: 12px 10px;
             cursor: pointer;
             &__title {
-                font-size: large;
+                width: 80%;
+                font-size:large;
             }
             &__info {
                 display: flex;
@@ -144,7 +174,7 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     padding-right:5px;
-                    width: 70vw;
+                    width: 75vw;
                     @include tablet-only{
                         width: 52vw;
                     }
@@ -169,10 +199,17 @@
             }
         }
         .fieldset {
-            @for $i from 1 through 3 {
+            @for $i from 1 through $nbr-field {
                 &__load--#{$i}:hover,&__load--#{$i}:active {
                     .field-body {
                         width: 70%;
+                        &__title{
+                            width: 100%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            transition: width 0.6s cubic-bezier(0,.68,.47,.99);
+                        }
                         @include tablet-only{
                             width: 80%;
                         }

@@ -33,7 +33,7 @@
         flex-direction: column;
         border-radius: 20px;
         overflow: hidden;
-        cursor: default;
+        cursor: pointer;
         @include shadow(3,3,5);
         @include tablet-only{
             width: 80%;

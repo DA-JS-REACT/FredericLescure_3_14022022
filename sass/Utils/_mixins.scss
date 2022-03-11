@@ -82,21 +82,6 @@
     }
 }
 
-// @for $i from 1 through 3 {
-//     &--#{$i} ::before {
-//         content:"#{$i}";
-//         position: absolute;
-//         left: -3%;
-//         height: 18px;
-//         width: 18px;
-//         background-color: $color-primary;
-//         color: white;
-//         border-radius: 50%;
-//         text-align:center;
-//         padding: 2px 2px 0px;
-//         font-size: small;
-//     }
-//     }
 
 /****** for tag New on card  ******/
 
@@ -128,7 +113,10 @@
             }
             @include tablet-only{
               background-position: center;
-             }
+            }
+            @include desktop-only{
+                background-position: center;
+            }
         }
     }
 }
@@ -169,7 +157,7 @@
 }
 @mixin animation-load {
     animation: load 1.2s ease-out both;
-    @for $i from 1 through 3 {
+    @for $i from 1 through $nbr-field {
         &--#{$i} {
             $nbr:calc($i / 5);
             animation-delay: $nbr+s;
@@ -286,6 +274,7 @@
         @include scroll($scroll:true);
     }
 }
+
 
 
 
