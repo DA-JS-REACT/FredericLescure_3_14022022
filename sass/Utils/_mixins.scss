@@ -239,6 +239,7 @@
 @mixin scroll($scroll : false) {
     @if  $scroll {
        overflow-y: hidden;
+       cursor: wait;
     }
 }
 
