@@ -54,9 +54,36 @@
                     margin-right: 10px;
                 }
             }
-            > i {
+            .heart {
                 margin-right: 5px;
                 font-size: 1.5rem;
+                cursor: pointer;
+                &__after {
+                    visibility: hidden;
+                    display: none;
+                    opacity: 0;
+                }
+                &__before {
+                    visibility: visible;
+                    display: block;
+                    opacity: 1;
+                }
+                &:hover, &:active {
+                    .heart__after {
+                        visibility: visible;
+                        display: block;
+                        background: -webkit-linear-gradient($color-primary,$color-secondary);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        opacity: 1;
+                    }
+                    .heart__before {
+                        visibility: hidden;
+                        display: none;
+                        opacity: 0;
+                    }
+                }
             }
         }
         .form-page  {
