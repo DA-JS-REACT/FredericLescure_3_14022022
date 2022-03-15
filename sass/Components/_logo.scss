@@ -2,7 +2,7 @@
     width: 13em;
     @include desktop-only{
         width: 18em;
-    } 
+    }
     &--footer {
         width: 8em;
         filter: invert(100%);
